@@ -1,5 +1,5 @@
 # SLGNNCT: Synthetic lethality prediction based on knowledge graph for different cancers types
-![image](https://github.com/Lydia0228/SLGNNCT/blob/master/figures/framework.png)
+![image](https://github.com/Lydia0228/SLGNNCT/blob/main/figures/framework.png)
 
 # Installation
 SLGNNCT is based on Python 3.9 and PyTorch 1.10.0
