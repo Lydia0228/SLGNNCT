@@ -43,7 +43,7 @@ def DistanceCorrelation(tensor_1, tensor_2):
 
 
 def load_data(args):
-    kg2id_np = np.loadtxt('../data/SL/further/LAML/kg2id' + '.txt', dtype=np.int64)
+    kg2id_np = np.loadtxt('../data/SL/further/BRCA/kg2id' + '.txt', dtype=np.int64)
     max = 0
     r_max = 0
     for i in range(len(kg2id_np)):

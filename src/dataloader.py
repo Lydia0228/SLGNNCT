@@ -17,7 +17,7 @@ from GAT import *
 
 DATA_PATH = '../data/SL/'
 # KG_FILE_NAME = 'raw/kg2id.txt'
-SL_DATASET = 'further/LAML/sl2id.txt'
+SL_DATASET = 'further/BRCA/sl2id.txt'
 NEIGHBOR_NUM = 16
 
 
@@ -181,7 +181,7 @@ class SLDataset(Dataset):
         return df_final
 
     def get_df(self):
-        data_path = DATA_PATH + 'fold_sl/LAML/fold_' + str(self.fold_n) + '/'
+        data_path = DATA_PATH + 'fold_sl/BRCA/fold_' + str(self.fold_n) + '/'
         train_df = pd.read_csv(data_path + 'train.txt', sep='\t')
         val_df = pd.read_csv(data_path + 'val.txt', sep='\t')
         test_df = pd.read_csv(data_path + 'test.txt', sep='\t')

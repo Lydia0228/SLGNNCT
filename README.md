@@ -1,8 +1,8 @@
-# SLGNN：Synthetic lethality prediction in human cancers based on  factor-aware knowledge graph neural network
-![image](https://github.com/zy972014452/SLGNN/blob/main/framework.png)
+# SLGNNCT: Synthetic lethality prediction based on knowledge graph for different cancers types
+![image](https://github.com/Lydia0228/SLGNNCT/blob/master/figures/framework.png)
 
 # Installation
-SLGNN is based on Pytorch and Python
+SLGNNCT is based on Python 3.9 and PyTorch 1.10.0
 ## Requirements
 You will need the following packages to run the code:
 * python==3.9.0
@@ -13,13 +13,29 @@ You will need the following packages to run the code:
 * scikit_learn==1.0.1
 * torch_scatter==2.0.9
 # Data Description
-The './data' folder contains the data used by our paper. The '/data/SL/fold' folder contains the SL interaction data, and we pre-divide the SL interactions in the raw data.
+The './data' folder contains all datasets used by our paper.
 
-The '/data/SL/raw' folder contains all raw data.
-# Usage
+The raw data we use is stored in './data/SL/raw', and we put the data divided by cancer type in the cancertype_data folder.
+The specific data used by the model is stored in './data/SL/fold_sl'.
+# Data Preprocessing(take BRCA as an example)
+### SL dataset
+When processing SL data, you need to use three different folders, enter them respectively and run the corresponding code:
+
+    $ cd data_preprocessing\preprocessing
+    $ python sl_preprocessing.py
+    $ cd data_preprocessing\furtherprocessing
+    $ python BRCA_furtherprocessing.py
+    $ cd data_preprocessing\fold
+    $ python BRCA_fold.py
+### KG dataset
+You need to go into the preprocessing folder and execute the 'kg_preprocessing_BRCA' file:
+
+    $ cd data_preprocessing\preprocessing
+    $ python kg_preprocessing_BRCA.py
+# Direct Usage of SLGNNCT
 First, you need to clone the repository or download source codes and data files. 
 
-    $ git clone https://github.com/zy972014452/SLGNN.git
+    $ git clone https://github.com/Lydia0228/SLGNNCT.git
 
 Then go to the folder '/src'
 
@@ -37,5 +53,4 @@ You can directly run the following code to train the model:
                       --node_dropout_rate 0.5 \
                               
 The rest of the hyperparameters can be viewed in the code
-
-python train.py   --epoch 100 \--batch_size 1024 \--dim 64 \--l2 0.0001 \--lr 0.003 \--sim_regularity 0.001 \--inverse_r True \--node_dropout_rate 0.5 \
+If you need to switch the cancer type for prediction, please modify the cancer name in the 'dataloader' and 'utils' files.
