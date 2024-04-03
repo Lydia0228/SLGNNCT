@@ -17,7 +17,8 @@ The './data' folder contains all datasets used by our paper.
 
 The raw data we use is stored in './data/SL/raw', and we put the data divided by cancer type in the cancertype_data folder.
 The specific data used by the model is stored in './data/SL/fold_sl'.
-# Data Preprocessing(take BRCA as an example)
+# Data Preprocessing
+## Take BRCA as an example:
 ### SL dataset
 When processing SL data, you need to use three different folders, enter them respectively and run the corresponding code:
 
@@ -52,5 +53,6 @@ You can directly run the following code to train the model:
                       --inverse_r True \
                       --node_dropout_rate 0.5 \
                               
-The rest of the hyperparameters can be viewed in the code
+The rest of the hyperparameters can be viewed in the code.
+
 If you need to switch the cancer type for prediction, please modify the cancer name in the 'dataloader' and 'utils' files.
